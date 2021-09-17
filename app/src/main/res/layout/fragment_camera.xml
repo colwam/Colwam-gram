@@ -20,5 +20,5 @@
         android:layout_marginTop="363dp"
         android:layout_marginEnd="102dp"
         android:layout_marginBottom="349dp"
-        android:text="This is a camera fragment bro" />
+        android:text="@string/camera" />
 </RelativeLayout>
