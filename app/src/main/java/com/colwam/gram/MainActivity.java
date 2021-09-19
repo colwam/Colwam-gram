@@ -106,6 +106,8 @@ public class MainActivity extends AppCompatActivity {
 
         if (id == R.id.settings)
             Toast.makeText(getApplicationContext(), "settings selected", Toast.LENGTH_SHORT).show();
+        else
+            Toast.makeText(getApplicationContext(), "upload file big man", Toast.LENGTH_SHORT).show();
         return true;
     }
 }
