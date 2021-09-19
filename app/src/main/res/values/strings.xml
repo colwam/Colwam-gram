@@ -3,6 +3,6 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="home">This is the Home page for our app</string>
-    <string name="search">This is the search page for Colwam gram</string>
+    <string name="search">This is the new search search page</string>
     <string name="camera">This is the camera page for our app.Lets enjoy sharing moments</string>
 </resources>
