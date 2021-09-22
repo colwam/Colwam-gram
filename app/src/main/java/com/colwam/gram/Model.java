@@ -6,7 +6,10 @@ public class Model {
 
     public static final Model[] eventData = {
             new Model("collins visit", R.drawable.babe),
-            new Model("collins love", R.drawable.babe1)
+            new Model("collins love", R.drawable.babe1),
+            new Model("collins wifey", R.drawable.swee),
+            new Model("collins manenoz", R.drawable.swee1),
+
     };
 
     private Model(String eventName, int imageResourceId) {
