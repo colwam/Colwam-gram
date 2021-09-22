@@ -7,6 +7,8 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.MenuItem;
@@ -26,8 +28,27 @@ public class HomeFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_home, container, false);
+        RecyclerView homeRecycler = (RecyclerView) inflater.inflate(
+                R.layout.fragment_home,container,false
+        );
+
+        String[] eventNames = new String[Model.eventData.length];
+        for (int i=0;i<eventNames.length;i++)
+        {
+            eventNames[i] = Model.eventData[i].getEventName();
+        }
+        int[] image = new int[Model.eventData.length];
+        for (int i=0;i< image.length;i++)
+        {
+            image[i] = Model.eventData[i].getImageResourceId();
+        }
+
+        HomePageAdapter adapter = new HomePageAdapter(eventNames,image);
+        homeRecycler.setAdapter(adapter);
+        GridLayoutManager layoutManager = new GridLayoutManager(getActivity(), 2);
+        homeRecycler.setLayoutManager(layoutManager);
+        return homeRecycler;
+
     }
 
 
