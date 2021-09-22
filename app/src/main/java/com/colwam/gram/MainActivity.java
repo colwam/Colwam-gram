@@ -49,12 +49,6 @@ public class MainActivity extends AppCompatActivity {
         NavHostFragment navHostFragment = (NavHostFragment) getSupportFragmentManager().findFragmentById(R.id.nav_host_fragment);
         navController = navHostFragment.getNavController();
 
-        //test AppBarconfiguration
-        AppBarConfiguration appBarConfiguration =
-                new AppBarConfiguration.Builder(navController.getGraph()).build();
-
-        NavigationUI.setupWithNavController(
-                toolbar, navController, appBarConfiguration);
 
 
         bottomNavigationView.setOnNavigationItemSelectedListener(navListener);
