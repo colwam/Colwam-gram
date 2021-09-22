@@ -44,7 +44,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="1dp"
             app:title="Colwam"
-            app:titleMarginStart="40dp"
+            app:titleMarginStart="20dp"
             android:background="?attr/colorPrimary"
             android:minHeight="?attr/actionBarSize"
             android:theme="?attr/actionBarTheme"
