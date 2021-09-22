@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:id="@+id/sendText"
+        android:title="send"
+        android:icon="@drawable/send"/>
+    <item android:id="@+id/settingsDrawable"
+        android:title="settings"
+        android:icon="@drawable/settings"/>
+    <item android:id="@+id/calender"
+        android:title="calender"
+        android:icon="@drawable/calender"/>
+
+
+</menu>

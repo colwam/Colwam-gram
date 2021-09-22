@@ -1,13 +1,17 @@
 package com.colwam.gram;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.navigation.NavAction;
 import androidx.navigation.NavController;
 import androidx.navigation.NavDestination;
 import androidx.navigation.Navigator;
 import androidx.navigation.fragment.NavHostFragment;
+import androidx.navigation.ui.AppBarConfiguration;
+import androidx.navigation.ui.NavigationUI;
 
 import android.os.Bundle;
 import android.util.Log;
@@ -16,11 +20,15 @@ import android.view.MenuItem;
 import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.navigation.NavigationView;
 
 public class MainActivity extends AppCompatActivity {
 
 
     private NavController navController;
+    private DrawerLayout drawerLayout;
+    private ActionBarDrawerToggle toggle;
+    private NavigationView navigationView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,9 +37,25 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+
+
+        drawerLayout = findViewById(R.id.drawer_layout);
+        navigationView = findViewById(R.id.nav_view);
+        toggle = new ActionBarDrawerToggle(this,drawerLayout,toolbar,R.string.start,R.string.close);
+        drawerLayout.addDrawerListener(toggle);
+        toggle.syncState();
+
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavigationView);
         NavHostFragment navHostFragment = (NavHostFragment) getSupportFragmentManager().findFragmentById(R.id.nav_host_fragment);
         navController = navHostFragment.getNavController();
+
+        //test AppBarconfiguration
+        AppBarConfiguration appBarConfiguration =
+                new AppBarConfiguration.Builder(navController.getGraph()).build();
+
+        NavigationUI.setupWithNavController(
+                toolbar, navController, appBarConfiguration);
+
 
         bottomNavigationView.setOnNavigationItemSelectedListener(navListener);
 
@@ -106,6 +130,8 @@ public class MainActivity extends AppCompatActivity {
 
         if (id == R.id.settings)
             Toast.makeText(getApplicationContext(), "settings selected", Toast.LENGTH_SHORT).show();
+        else if(id == R.id.search)
+            Toast.makeText(getApplicationContext(), "search is clicked", Toast.LENGTH_SHORT).show();
         else
             Toast.makeText(getApplicationContext(), "upload file big man", Toast.LENGTH_SHORT).show();
         return true;
