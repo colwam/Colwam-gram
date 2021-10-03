@@ -5,10 +5,14 @@ public class Model {
     private int imageResourceId;
 
     public static final Model[] eventData = {
-            new Model("collins visit", R.drawable.babe),
-            new Model("collins love", R.drawable.babe1),
-            new Model("collins wifey", R.drawable.swee),
-            new Model("collins manenoz", R.drawable.swee1),
+            new Model("at Kisii", R.drawable.babe),
+            new Model("baby's birthday", R.drawable.babe1),
+            new Model("collins wifey", R.drawable.wambo),
+            new Model("collins babes", R.drawable.rose),
+            new Model("colwam", R.drawable.colwam),
+            new Model("hunnie", R.drawable.hunnie),
+            new Model("sweery", R.drawable.hunnie),
+            new Model("babes", R.drawable.hunnie)
 
     };
 

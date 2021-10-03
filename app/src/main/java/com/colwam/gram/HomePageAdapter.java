@@ -17,6 +17,11 @@ public class HomePageAdapter extends RecyclerView.Adapter<HomePageAdapter.ViewHo
 
     private String[] eventnames;
     private int[] imageIds;
+    private Listener listener;
+
+    interface Listener {
+        void onClick(int position);
+    }
 
     public HomePageAdapter(String [] eventnames,int [] imageIds)
     {
@@ -47,6 +52,15 @@ public class HomePageAdapter extends RecyclerView.Adapter<HomePageAdapter.ViewHo
         imageView.setContentDescription(eventnames[position]);
         TextView textView = (TextView) cardView.findViewById(R.id.info_text);
         textView.setText(eventnames[position]);
+        cardView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (listener != null)
+                {
+                    listener.onClick(holder.getAdapterPosition());
+                }
+            }
+        });
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder
@@ -59,5 +73,10 @@ public class HomePageAdapter extends RecyclerView.Adapter<HomePageAdapter.ViewHo
             cardView = view;
         }
 
+    }
+
+    public void setListener(Listener listener)
+    {
+        this.listener = listener;
     }
 }
